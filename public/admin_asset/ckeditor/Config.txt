@@ -1,0 +1,6 @@
+<script type="text/javascript" 
+        language="javascript" 
+        src="admin_assets/ckeditor/ckeditor.js">            
+</script>
+
+<textarea id="demo" class="ckeditor"></textarea>
