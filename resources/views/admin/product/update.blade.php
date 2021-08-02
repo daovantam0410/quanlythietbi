@@ -52,6 +52,26 @@
                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên tiêu đề . . .">
                        <p class="help is-danger" style="color: red">{{ $errors->first('tenSanPham')}}</p>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="exampleFormControlSelect1">Tên danh mục</label>
+                    <select  name="tenDanhMuc" class="form-control" id="exampleFormControlSelect1">
+                        <option value="{{$getProduct[0]->category_id}}">{{$getProduct[0]->categoryname}}</option>
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->categoryname}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="exampleFormControlSelect1">Tên hãng</label>
+                    <select  name="tenHang" class="form-control" id="exampleFormControlSelect1">
+                        <option value="{{$getProduct[0]->subcategory_id}}">{{$getProduct[0]->subcategoryname}}</option>
+                        @foreach($subcategories as $subcategory)
+                            <option value="{{$subcategory->id}}">{{$subcategory->subcategoryname}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Chọn ảnh</label>
                 <div class="custom-file">
@@ -90,7 +110,7 @@
                        id="exampleInputEmail1" aria-describedby="emailHelp">
                        <p class="help is-danger" style="color: red">{{ $errors->first('tinhTrang')}}</p>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <label for="exampleFormControlSelect1">Tên danh mục</label>
                     <select  name="tenDanhMuc" class="form-control" id="exampleFormControlSelect1">
@@ -109,7 +129,7 @@
                         @endforeach
                     </select>
                 </div>
-            </div>
+            </div> -->
             <div class="modal-footer">
                 <a href="{{url('listproduct')}}"><button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button></a>
                 <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
