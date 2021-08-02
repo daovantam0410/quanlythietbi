@@ -155,7 +155,7 @@
                                     <th style="text-align: center;">Mã sản phẩm</th>
                                     <th style="text-align: center;">Tên sản phẩm</th>
                                     <th style="text-align: center;">Ảnh sản phẩm</th>
-                                    <th style="text-align: center;">Tình trạng</th>
+                                    <!-- <th style="text-align: center;">Tình trạng</th> -->
                                     <th style="text-align: center;">Hãng</th>
                                     <th style="text-align: center;">Danh mục</th>
                                     <th style="text-align: center;">Xử lý</th>
@@ -168,7 +168,7 @@
                                         <td style="text-align: center;">{{$product->series}}</td>
                                         <td style="text-align: center;"><a href="{{route('updateproduct',$product->id)}}">{{$product->productname}}</a></td>
                                         <td style="text-align: center;"><img src="upload/{{$product->thumbnail}}" width="70px" height="70px"></td>
-                                        <td style="text-align: center;">{{$product->status}}</td>
+                                        <!-- <td style="text-align: center;">{{$product->status}}</td> -->
                                         <td style="text-align: center;">{{$product->subcategoryname}}</td>
                                         <td style="text-align: center;">{{$product->categoryname}}</td>
                                         <td style="text-align: center;">
