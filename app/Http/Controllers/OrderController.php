@@ -11,8 +11,12 @@ use Carbon\carbon;
 class OrderController extends Controller
 {
     public function findOrderfails(){
-        $findOrderfails = DB::table('bill')->where('status',0)
+        $findOrderfails = DB::table('bill')
+        ->join('status','bill.status','=','status.id')
+        ->where('status.id',1)
+        ->select('bill.id','bill.fullname','bill.phonenumber','bill.created_at','status.nameStatus as status')
         ->get();
+        // dd($findOrderfails);
     	return view('admin/cart/listfails',compact('findOrderfails'));
     }
 
@@ -38,11 +42,20 @@ class OrderController extends Controller
     // }
 
     public function checkStatus($billId){
-       DB::table('bill')->where('id',$billId)->update(['status' => 1,'updated_at'=>carbon::now()]);
+        // code cũ
+       // DB::table('bill')->where('id',$billId)->update(['status' => 1,'updated_at'=>carbon::now()]);
+
+       // code mới
+       DB::table('bill')->where('id',$billId)->update(['status' => 2,'updated_at'=>carbon::now()]);
     }
     public function findOrderSuccess(){
-    	$findOrderSuccess = DB::table('bill')->where('status',1)
+    	// $findOrderSuccess = DB::table('bill')->where('status',1)
+        $findOrderSuccess = DB::table('bill')
+        ->join('status','bill.status','=','status.id')
+        ->where('status.id',2)
+        ->select('bill.id','bill.fullname','bill.phonenumber','bill.created_at','bill.updated_at','status.nameStatus as status')
         ->get();
+        // dd($findOrderSuccess);
         return view('admin/cart/listsuccess',compact('findOrderSuccess'));
     }
 

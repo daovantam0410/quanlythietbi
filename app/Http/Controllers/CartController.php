@@ -43,7 +43,8 @@ class CartController extends Controller
 		$bill->email = $req->email;
 		$bill->address = $req->address;
 		$bill->total_price = Cart::getTotal(0,"","");
-		$bill->status = 0;
+		// $bill->status = 0;
+		$bill->status = 1;
 		$bill->save();
 		foreach (Cart::getContent() as $product) {
 			$prd = new DetailsBillProductModel;
