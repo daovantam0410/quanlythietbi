@@ -52,43 +52,6 @@
                        id="exampleInputEmail1" aria-describedby="emailHelp" >
                        <p class="help is-danger" style="color: red">{{ $errors->first('tenSanPham')}}</p>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Chọn ảnh</label>
-                <div class="custom-file">
-                    <input name="anh" type="file" class="custom-file-input" id="inputGroupFile01">
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Thông số kỹ thuật</label>
-                <textarea name="thongSoKyThuat"  type="text" class="form-control ckeditor"
-                       id="exampleInputEmail1" id="demo" aria-describedby="emailHelp"></textarea>
-                       <p class="help is-danger" style="color: red">{{ $errors->first('thongSoKyThuat')}}</p>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Nội dung</label>
-                <textarea name="noiDung"  type="text" class="form-control ckeditor"
-                       id="exampleInputEmail1" id="demo" aria-describedby="emailHelp"></textarea>
-                       <p class="help is-danger" style="color: red">{{ $errors->first('noiDung')}}</p>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Giá bán</label>
-                <input name="gia"  type="text" class="form-control"
-                       id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên tiêu đề . . .">
-                       <p class="help is-danger" style="color: red">{{ $errors->first('gia')}}</p>
-            </div>
-            <!-- <div class="form-group">
-                <label for="exampleInputEmail1">Số lượng</label>
-                <input name="soLuong"  type="text" class="form-control"
-                       id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập số lượng . . .">
-                       <p class="help is-danger" style="color: red">{{ $errors->first('soLuong')}}</p>
-            </div> -->
-            <div class="form-group">
-                <label for="exampleInputEmail1">Tình trạng</label>
-                <input name="tinhTrang"  type="text" class="form-control"
-                       id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên tiêu đề . . .">
-                       <p class="help is-danger" style="color: red">{{ $errors->first('tinhTrang')}}</p>
-            </div>
             <div class="row">
                 <div class="col-md-6">
                     <label for="exampleFormControlSelect1">Tên danh mục</label>
@@ -112,6 +75,66 @@
                 </div>
                 
             </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Chọn ảnh</label>
+                <div class="custom-file">
+                    <input name="anh" type="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Thông số kỹ thuật</label>
+                <textarea name="thongSoKyThuat"  type="text" class="form-control ckeditor"
+                       id="exampleInputEmail1" id="demo" aria-describedby="emailHelp"></textarea>
+                       <p class="help is-danger" style="color: red">{{ $errors->first('thongSoKyThuat')}}</p>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nội dung</label>
+                <textarea name="noiDung"  type="text" class="form-control ckeditor"
+                       id="exampleInputEmail1" id="demo" aria-describedby="emailHelp"></textarea>
+                       <p class="help is-danger" style="color: red">{{ $errors->first('noiDung')}}</p>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Giá bán</label>
+                <input name="gia"  type="text" class="form-control"
+                       id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên giá bán . . .">
+                       <p class="help is-danger" style="color: red">{{ $errors->first('gia')}}</p>
+            </div>
+            <!-- <div class="form-group">
+                <label for="exampleInputEmail1">Số lượng</label>
+                <input name="soLuong"  type="text" class="form-control"
+                       id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập số lượng . . .">
+                       <p class="help is-danger" style="color: red">{{ $errors->first('soLuong')}}</p>
+            </div> -->
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tình trạng</label>
+                <input name="tinhTrang"  type="text" class="form-control"
+                       id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập tên tình trạng . . .">
+                       <p class="help is-danger" style="color: red">{{ $errors->first('tinhTrang')}}</p>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-6">
+                    <label for="exampleFormControlSelect1">Tên danh mục</label>
+                    <select  name="tenDanhMuc" class="form-control" id="exampleFormControlSelect1">
+                        <option selected value="0">Chọn tên danh mục ---</option>
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->categoryname}}</option>
+                        @endforeach
+                    </select>
+                    <p class="help is-danger" style="color: red">{{ $errors->first('tenDanhMuc')}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label for="exampleFormControlSelect1">Tên hãng</label>
+                    <select  name="tenHang" class="form-control" id="exampleFormControlSelect1">
+                        <option selected value="0">Chọn tên hãng ---</option>
+                        @foreach($subcategories as $subcategory)
+                            <option value="{{$subcategory->id}}">{{$subcategory->subcategoryname}}</option>
+                        @endforeach
+                    </select>
+                    <p class="help is-danger" style="color: red">{{ $errors->first('tenHang')}}</p>
+                </div>
+                
+            </div> -->
             <div class="modal-footer">
                 <a href="{{url('listproduct')}}"><button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button></a>
                 <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
